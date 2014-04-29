@@ -1,6 +1,8 @@
 FROM centos
-MAINTAINER Yohei Kawahara "inokara@gmail.com"
+MAINTAINER Tatsuya Arai "sunday.is.over@gmail.com"
 #
+RUN yum -y install tar
+RUN yum -y install wget
 RUN yum -y install gcc zlib-devel openssl-devel sqlite sqlite-devel gcc-c++ openssh-server sudo
 RUN cd /usr/local/src && wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.1.tar.gz
 RUN cd /usr/local/src && tar zxvf ruby-2.1.1.tar.gz && cd ruby-2.1.1 && ./configure && make && make install
